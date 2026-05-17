@@ -1,0 +1,2 @@
+/* main.container relies on `margin: 0 auto` + max-width.
+   Keep #root as a block so cross-axis margin-auto works as expected. */

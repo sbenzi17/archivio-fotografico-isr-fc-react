@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__chrome-devtools__navigate_page",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\Documents\" -Directory | Select-Object Name, LastWriteTime | Sort-Object LastWriteTime -Descending | Select-Object -First 30)",
+      "PowerShell(Get-ChildItem -LiteralPath \"$env:USERPROFILE\\\\Documents\" -Directory -ErrorAction Stop | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem -LiteralPath \"$env:USERPROFILE\\\\Documents\\\\archivio-fotografico-isr-fc\" -Recurse -File | Select-Object -ExpandProperty FullName)",
+      "PowerShell($p = \"$env:USERPROFILE\\\\Documents\\\\archivio-fotografico-isr-fc\"; Get-ChildItem -LiteralPath $p | ForEach-Object { \"$\\($_.Mode\\) $\\($_.Name\\)\" })",
+      "Bash(ls -la \"/c/Users/david/Documents/archivio-fotografico-isr-fc\")",
+      "Read(//c/Users/david/Documents/archivio-fotografico-isr-fc/**)",
+      "Bash(find \"/c/Users/david/Documents\" \"/c/Users/david/Desktop\" \"/c/Users/david/Downloads\" -maxdepth 4 -type f \\\\\\( -iname \"*.html\" -o -iname \"*.css\" \\\\\\) 2>/dev/null | grep -iE \"archivio|fotograf|isr|resistenza|liberazione\" | head -50)",
+      "Read(//c/Users/david/Documents/**)",
+      "Bash(find \"/c/Users/david/Desktop\" \"/c/Users/david/Downloads\" -maxdepth 4 -type d 2>/dev/null | grep -iE \"archivio|fotograf|isr|resist\" | head -20)",
+      "Read(//c/Users/david/Desktop/**)",
+      "Bash(find \"/c/Users/david\" -maxdepth 4 -type f -iname \"*.html\" 2>/dev/null | grep -v node_modules | head -30)",
+      "Read(//c/Users/david/**)",
+      "Bash(ls \"/c/\\\\$Recycle.Bin\" 2>/dev/null | head -10; ls \"/c/Users/david/AppData/Local/Microsoft/Windows/INetCache\" 2>/dev/null | head -10)",
+      "Read(//c/$Recycle.Bin/**)",
+      "PowerShell($shell = New-Object -ComObject Shell.Application; $bin = $shell.Namespace\\(0xA\\); $count = \\($bin.Items\\(\\) | Measure-Object\\).Count; \"Recycle bin items: $count\"; $bin.Items\\(\\) | Select-Object -First 20 | ForEach-Object { $_.Name })",
+      "Bash(find \"/c/Users/david/OneDrive\" \"/c/Users/david/OneDrive - \"* -maxdepth 8 -type f \\\\\\( -iname \"*.html\" -o -iname \"*.htm\" -o -iname \"risultati*\" \\\\\\))",
+      "Bash(node -e ' *)",
+      "Bash(node \"/c/Users/david/Documents/archivio-fotografico-isr-fc-react/recover.js\")",
+      "Bash(node \"/c/Users/david/Documents/archivio-fotografico-isr-fc-react/recover.cjs\")",
+      "mcp__chrome-devtools__resize_page",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__click",
+      "Bash(cp \"/c/Users/david/Downloads/Logo_positivo_Biblioteca.png\" \"/c/Users/david/Documents/archivio-fotografico-isr-fc-react/public/logos/biblioteca-malatestiana.png\")",
+      "Bash(cp \"/c/Users/david/Downloads/logo-cesena.gif\" \"/c/Users/david/Documents/archivio-fotografico-isr-fc-react/public/logos/comune-cesena.gif\")"
+    ]
+  }
+}

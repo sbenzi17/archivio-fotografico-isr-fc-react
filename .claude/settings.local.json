@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm install)",
+      "PowerShell(npm run dev)",
+      "PowerShell(claude mcp add chrome-devtools -s user -- npx chrome-devtools-mcp@latest)",
+      "PowerShell(if \\(Test-Path $env:USERPROFILE\\\\.claude.json\\) { \"exists: .claude.json\" } else { \"missing: .claude.json\" }; if \\(Test-Path $env:USERPROFILE\\\\.claude\\\\settings.json\\) { \"exists: .claude/settings.json\" } else { \"missing: .claude/settings.json\" })",
+      "PowerShell(node -e \"const c=require\\(process.env.USERPROFILE+'/.claude.json'\\); console.log\\('mcpServers:', JSON.stringify\\(c.mcpServers||{}, null, 2\\)\\)\")",
+      "PowerShell($path = \"$env:USERPROFILE\\\\.claude.json\"; $json = Get-Content $path -Raw | ConvertFrom-Json; if \\(-not $json.mcpServers\\) { $json | Add-Member -NotePropertyName mcpServers -NotePropertyValue \\(New-Object PSObject\\) -Force }; $json.mcpServers | Add-Member -NotePropertyName 'chrome-devtools' -NotePropertyValue \\([PSCustomObject]@{ type='stdio'; command='npx'; args=@\\('-y','chrome-devtools-mcp@latest'\\) }\\) -Force; \\($json | ConvertTo-Json -Depth 50\\) | Set-Content -Path $path -Encoding UTF8; \"added chrome-devtools MCP\")",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__list_console_messages"
+    ]
+  }
+}
