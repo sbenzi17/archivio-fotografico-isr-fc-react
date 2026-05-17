@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import comuneCesenaLogo from '../assets/logos/comune-cesena.gif'
+import bibliotecaMalatestiana from '../assets/logos/biblioteca-malatestiana.png'
 
 export default function Footer() {
   return (
@@ -8,11 +10,11 @@ export default function Footer() {
           <p className="footer-partners-title">In cerca di collaborazioni con</p>
           <div className="footer-partners-logos">
             <div className="partner-logo">
-              <img src="/logos/comune-cesena.gif" alt="Comune di Cesena" />
+              <img src={comuneCesenaLogo} alt="Comune di Cesena" />
               <span className="partner-logo-name">Comune di Cesena</span>
             </div>
             <div className="partner-logo">
-              <img src="/logos/biblioteca-malatestiana.png" alt="Biblioteca Malatestiana" />
+              <img src={bibliotecaMalatestiana} alt="Biblioteca Malatestiana" />
               <span className="partner-logo-name">Biblioteca Malatestiana</span>
             </div>
           </div>
